@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="document-processing-ocr">
+  <rect width="960" height="540" fill="#f4f4f4"/>
+  <rect width="960" height="540" fill="url(#wash-documentprocessingocr)"/>
+  <defs>
+    <linearGradient id="wash-documentprocessingocr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f62fe" stop-opacity="0.08"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0043ce" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+  <line x1="-468" y1="0" x2="72" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-404" y1="0" x2="136" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-340" y1="0" x2="200" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-276" y1="0" x2="264" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-212" y1="0" x2="328" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-148" y1="0" x2="392" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-84" y1="0" x2="456" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-20" y1="0" x2="520" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="44" y1="0" x2="584" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="108" y1="0" x2="648" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="172" y1="0" x2="712" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="236" y1="0" x2="776" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="300" y1="0" x2="840" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="364" y1="0" x2="904" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="428" y1="0" x2="968" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="492" y1="0" x2="1032" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="556" y1="0" x2="1096" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="620" y1="0" x2="1160" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="684" y1="0" x2="1224" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="748" y1="0" x2="1288" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="812" y1="0" x2="1352" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="876" y1="0" x2="1416" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="940" y1="0" x2="1480" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1004" y1="0" x2="1544" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1068" y1="0" x2="1608" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1132" y1="0" x2="1672" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1196" y1="0" x2="1736" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1260" y1="0" x2="1800" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1324" y1="0" x2="1864" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1388" y1="0" x2="1928" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1452" y1="0" x2="1992" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1516" y1="0" x2="2056" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <rect x="688" y="304" width="64" height="64" fill="none" stroke="#0043ce" stroke-width="2" opacity="0.35"/>
+  <rect x="752" y="240" width="96" height="96" fill="none" stroke="#0043ce" stroke-width="1" opacity="0.44999999999999996"/>
+  <rect x="48" y="176" width="128" height="128" fill="none" stroke="#0043ce" stroke-width="1" opacity="0.55"/>
+  <rect x="112" y="112" width="64" height="64" fill="none" stroke="#0043ce" stroke-width="1" opacity="0.65"/>
+  <rect x="0" y="444" width="960" height="96" fill="#161616" opacity="0.04"/>
+  <circle cx="840" cy="96" r="48" fill="#0043ce" opacity="0.12"/>
+  <circle cx="840" cy="96" r="24" fill="none" stroke="#0043ce" stroke-width="2" opacity="0.5"/>
+  <rect x="0" y="0" width="6" height="540" fill="#0043ce"/>
+</svg>

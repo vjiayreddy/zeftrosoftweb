@@ -1,6 +1,7 @@
 import { Footer, Header } from "@/components/layout";
 import { PageTransition } from "@/components/motion";
 import { site } from "@/content";
+import { ogDefault } from "@/lib/media";
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
@@ -26,11 +27,20 @@ export const metadata: Metadata = {
     url: site.url,
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: ogDefault.src,
+        width: ogDefault.width,
+        height: ogDefault.height,
+        alt: ogDefault.alt,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: site.name,
     description: site.description,
+    images: [ogDefault.src],
   },
   robots: {
     index: true,

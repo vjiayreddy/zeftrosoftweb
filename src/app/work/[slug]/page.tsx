@@ -70,6 +70,7 @@ export default async function WorkDetailPage({ params }: Props) {
         description={study.summary}
         primaryCta={primaryCta}
         secondaryCta={{ label: "All work", href: "/work" }}
+        image={study.image}
       />
 
       {study.framing === "representative" ? (

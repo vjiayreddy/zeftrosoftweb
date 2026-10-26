@@ -63,6 +63,7 @@ export default async function IndustryDetailPage({ params }: Props) {
         description={industry.summary}
         primaryCta={primaryCta}
         secondaryCta={{ label: "All industries", href: "/industries" }}
+        image={industry.image}
       />
 
       <Section

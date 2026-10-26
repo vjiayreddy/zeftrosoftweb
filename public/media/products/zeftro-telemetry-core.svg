@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="zeftro-telemetry-core">
+  <rect width="960" height="540" fill="#f4f4f4"/>
+  <rect width="960" height="540" fill="url(#wash-pzeftrotelemetrycore)"/>
+  <defs>
+    <linearGradient id="wash-pzeftrotelemetrycore" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f62fe" stop-opacity="0.08"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0043ce" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+  <line x1="-516" y1="0" x2="24" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-444" y1="0" x2="96" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-372" y1="0" x2="168" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-300" y1="0" x2="240" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-228" y1="0" x2="312" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-156" y1="0" x2="384" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-84" y1="0" x2="456" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="-12" y1="0" x2="528" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="60" y1="0" x2="600" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="132" y1="0" x2="672" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="204" y1="0" x2="744" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="276" y1="0" x2="816" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="348" y1="0" x2="888" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="420" y1="0" x2="960" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="492" y1="0" x2="1032" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="564" y1="0" x2="1104" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="636" y1="0" x2="1176" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="708" y1="0" x2="1248" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="780" y1="0" x2="1320" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="852" y1="0" x2="1392" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="924" y1="0" x2="1464" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="996" y1="0" x2="1536" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1068" y1="0" x2="1608" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1140" y1="0" x2="1680" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1212" y1="0" x2="1752" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1284" y1="0" x2="1824" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1356" y1="0" x2="1896" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1428" y1="0" x2="1968" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="1500" y1="0" x2="2040" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <rect x="368" y="368" width="64" height="64" fill="none" stroke="#002d9c" stroke-width="2" opacity="0.35"/>
+  <rect x="432" y="304" width="96" height="96" fill="none" stroke="#002d9c" stroke-width="1" opacity="0.44999999999999996"/>
+  <rect x="496" y="240" width="128" height="128" fill="none" stroke="#002d9c" stroke-width="1" opacity="0.55"/>
+  <rect x="560" y="176" width="64" height="64" fill="none" stroke="#002d9c" stroke-width="1" opacity="0.65"/>
+  <rect x="0" y="444" width="960" height="96" fill="#161616" opacity="0.04"/>
+  <circle cx="840" cy="96" r="48" fill="#002d9c" opacity="0.12"/>
+  <circle cx="840" cy="96" r="24" fill="none" stroke="#002d9c" stroke-width="2" opacity="0.5"/>
+  <rect x="0" y="0" width="6" height="540" fill="#002d9c"/>
+</svg>

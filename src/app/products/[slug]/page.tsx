@@ -61,6 +61,7 @@ export default async function ProductDetailPage({ params }: Props) {
         description={product.summary}
         primaryCta={primaryCta}
         secondaryCta={{ label: "All products", href: "/products" }}
+        image={product.image}
       />
 
       <Section

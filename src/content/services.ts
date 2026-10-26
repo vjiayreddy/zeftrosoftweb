@@ -1,3 +1,4 @@
+import { pillarIcon } from "@/lib/media";
 import type { Pillar } from "./types";
 
 export const servicesPage = {
@@ -16,6 +17,7 @@ export const pillars: Pillar[] = [
     summary:
       "Web apps, mobile apps and custom software built for your needs — resilient digital foundations designed for real operational load.",
     href: "/services/software",
+    image: pillarIcon("software", "Software and product engineering icon"),
     offerings: [
       "Web Applications",
       "Mobile Applications",
@@ -33,6 +35,7 @@ export const pillars: Pillar[] = [
     summary:
       "Systems that read data, find patterns and automate work — from edge computer vision to structured document pipelines.",
     href: "/services/ai-data",
+    image: pillarIcon("ai-data", "AI, data and automation icon"),
     offerings: [
       "AI and Machine Learning",
       "Computer Vision",
@@ -50,6 +53,7 @@ export const pillars: Pillar[] = [
     summary:
       "Software that works with devices, sensors and cameras — bridging industrial equipment to reliable software and data systems.",
     href: "/services/connected",
+    image: pillarIcon("connected", "Hardware and connected systems icon"),
     offerings: [
       "IoT & Industrial Systems",
       "Embedded Systems",

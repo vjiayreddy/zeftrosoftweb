@@ -4,6 +4,8 @@ import { LinkButton } from "@/components/ui";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 import { primaryCta, primaryNav, site } from "@/content";
+import { brand } from "@/lib/media";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
@@ -174,9 +176,17 @@ export function Header() {
       <div className="mx-auto flex h-16 w-full max-w-[1584px] items-center justify-between gap-md px-md lg:px-xl">
         <Link
           href="/"
-          className="shrink-0 text-body-emphasis text-ink no-underline hover:text-ink"
+          className="inline-flex shrink-0 items-center no-underline hover:opacity-90"
+          aria-label={site.name}
         >
-          {site.name}
+          <Image
+            src={brand.wordmark}
+            alt=""
+            width={150}
+            height={32}
+            className="h-8 w-auto"
+            priority
+          />
         </Link>
 
         <nav

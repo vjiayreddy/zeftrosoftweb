@@ -1,5 +1,9 @@
 export { AdvantageGrid, type AdvantageGridProps } from "./advantage-grid";
 export { CaseStudyCard, type CaseStudyCardProps } from "./case-study-card";
+export {
+  ClientLogoMarquee,
+  type ClientLogoMarqueeProps,
+} from "./client-logo-marquee";
 export { CtaBand, type CtaBandProps } from "./cta-band";
 export { IndustryCard, type IndustryCardProps } from "./industry-card";
 export { PageHero, type PageHeroProps } from "./page-hero";

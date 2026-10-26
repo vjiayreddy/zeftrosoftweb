@@ -1,3 +1,5 @@
+import type { MediaImage } from "@/lib/media";
+
 export type NavLink = {
   label: string;
   href: string;
@@ -13,6 +15,12 @@ export type FooterColumn = {
   links: NavLink[];
 };
 
+export type ClientLogo = {
+  id: string;
+  name: string;
+  logo: MediaImage;
+};
+
 export type PillarId = "software" | "ai-data" | "connected";
 
 export type Pillar = {
@@ -23,6 +31,7 @@ export type Pillar = {
   summary: string;
   href: string;
   offerings: string[];
+  image?: MediaImage;
 };
 
 export type Industry = {
@@ -31,6 +40,7 @@ export type Industry = {
   summary: string;
   highlight: string;
   capabilities: string[];
+  image?: MediaImage;
 };
 
 export type Product = {
@@ -41,6 +51,7 @@ export type Product = {
   capabilities: string[];
   deployment: string[];
   href: string;
+  image?: MediaImage;
 };
 
 export type CaseStudy = {
@@ -53,6 +64,7 @@ export type CaseStudy = {
   stack: string[];
   outcome: string;
   framing: "representative" | "verified";
+  image?: MediaImage;
 };
 
 export type ProcessStep = {

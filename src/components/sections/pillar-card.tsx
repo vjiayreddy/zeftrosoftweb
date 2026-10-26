@@ -1,4 +1,4 @@
-import { FeatureCard } from "@/components/ui";
+import { FeatureCard, MediaImage } from "@/components/ui";
 import type { Pillar } from "@/content";
 import Link from "next/link";
 
@@ -9,8 +9,19 @@ export type PillarCardProps = {
 export function PillarCard({ pillar }: PillarCardProps) {
   return (
     <FeatureCard className="flex h-full flex-col gap-md">
-      <div className="flex items-baseline justify-between gap-sm">
-        <span className="text-caption text-ink-subtle">{pillar.number}</span>
+      <div className="flex items-start justify-between gap-sm">
+        <div className="flex items-center gap-sm">
+          {pillar.image ? (
+            <div className="flex h-12 w-12 items-center justify-center border border-hairline bg-surface-1 p-sm">
+              <MediaImage
+                image={pillar.image}
+                className="h-6 w-6 object-contain"
+                sizes="48px"
+              />
+            </div>
+          ) : null}
+          <span className="text-caption text-ink-subtle">{pillar.number}</span>
+        </div>
         <span className="text-eyebrow text-primary">{pillar.label}</span>
       </div>
       <h3 className="text-card-title text-ink">

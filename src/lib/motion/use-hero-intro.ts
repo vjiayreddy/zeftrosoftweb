@@ -23,9 +23,10 @@ export function useHeroIntro(scope: RefObject<HTMLElement | null>) {
           const title = root.querySelector('[data-motion="title"]');
           const body = root.querySelector('[data-motion="body"]');
           const ctas = root.querySelectorAll('[data-motion="cta"]');
+          const media = root.querySelector('[data-motion="media"]');
 
           if (reduce) {
-            gsap.set([eyebrow, title, body, ctas], { clearProps: "all" });
+            gsap.set([eyebrow, title, body, ctas, media], { clearProps: "all" });
             return;
           }
 
@@ -76,6 +77,18 @@ export function useHeroIntro(scope: RefObject<HTMLElement | null>) {
                 stagger: 0.08,
               },
               "-=0.25",
+            );
+          }
+
+          if (media) {
+            tl.from(
+              media,
+              {
+                autoAlpha: 0,
+                x: 24,
+                duration: 0.55,
+              },
+              "-=0.45",
             );
           }
         },

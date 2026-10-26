@@ -1,4 +1,6 @@
 import { copyright, footerColumns, site } from "@/content";
+import { brand } from "@/lib/media";
+import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
@@ -6,7 +8,15 @@ export function Footer() {
     <footer className="mt-auto border-t border-hairline bg-canvas">
       <div className="mx-auto grid w-full max-w-[1584px] gap-xl px-md py-xxl md:grid-cols-4 md:px-xl">
         <div className="flex flex-col gap-sm md:col-span-1">
-          <p className="text-body-emphasis text-ink">{site.name}</p>
+          <Link href="/" aria-label={site.name} className="inline-flex w-fit">
+            <Image
+              src={brand.wordmark}
+              alt=""
+              width={150}
+              height={32}
+              className="h-8 w-auto"
+            />
+          </Link>
           <p className="max-w-sm text-body-sm text-ink-muted">
             {site.description}
           </p>

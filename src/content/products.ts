@@ -1,3 +1,4 @@
+import { productCover } from "@/lib/media";
 import type { Product } from "./types";
 
 export const productsPage = {
@@ -21,6 +22,7 @@ export const products: Product[] = [
       "Hybrid and on-prem topologies",
     ],
     deployment: ["Cloud-native", "Hybrid Kubernetes", "Air-gapped on-prem"],
+    image: productCover("zeftro-telemetry-core", "Cover art for Zeftro Telemetry Core"),
     href: "/products/zeftro-telemetry-core",
   },
   {
@@ -36,6 +38,7 @@ export const products: Product[] = [
       "Operator overlay dashboards",
     ],
     deployment: ["On-premises", "OEM appliance", "Industrial edge"],
+    image: productCover("visionedge-pro", "Cover art for VisionEdge Pro"),
     href: "/products/visionedge-pro",
   },
   {
@@ -51,6 +54,7 @@ export const products: Product[] = [
       "SDK support across major languages",
     ],
     deployment: ["Air-gapped", "On-prem cluster", "Hybrid appliance"],
+    image: productCover("omnilicense-enterprise", "Cover art for OmniLicense Enterprise"),
     href: "/products/omnilicense-enterprise",
   },
   {
@@ -66,6 +70,7 @@ export const products: Product[] = [
       "Signed OTA update workflows",
     ],
     deployment: ["Linux gateways", "Embedded targets", "Factory edge"],
+    image: productCover("zeftro-connect-gateway", "Cover art for Zeftro Connect Gateway SDK"),
     href: "/products/zeftro-connect-gateway",
   },
 ];

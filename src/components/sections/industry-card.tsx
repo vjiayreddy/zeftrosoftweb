@@ -1,4 +1,4 @@
-import { FeatureCard } from "@/components/ui";
+import { FeatureCard, MediaImage } from "@/components/ui";
 import type { Industry } from "@/content";
 import Link from "next/link";
 
@@ -8,17 +8,33 @@ export type IndustryCardProps = {
 
 export function IndustryCard({ industry }: IndustryCardProps) {
   return (
-    <FeatureCard elevated className="flex h-full flex-col gap-sm">
-      <p className="text-caption text-primary">{industry.highlight}</p>
-      <h3 className="text-subhead text-ink">
+    <FeatureCard elevated className="flex h-full flex-col overflow-hidden p-0">
+      {industry.image ? (
         <Link
           href={`/industries/${industry.slug}`}
-          className="text-ink no-underline hover:text-primary"
+          className="block border-b border-hairline bg-surface-1"
+          tabIndex={-1}
+          aria-hidden
         >
-          {industry.title}
+          <MediaImage
+            image={industry.image}
+            className="aspect-[16/10] w-full object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          />
         </Link>
-      </h3>
-      <p className="text-body-sm text-ink-muted">{industry.summary}</p>
+      ) : null}
+      <div className="flex flex-1 flex-col gap-sm p-lg">
+        <p className="text-caption text-primary">{industry.highlight}</p>
+        <h3 className="text-subhead text-ink">
+          <Link
+            href={`/industries/${industry.slug}`}
+            className="text-ink no-underline hover:text-primary"
+          >
+            {industry.title}
+          </Link>
+        </h3>
+        <p className="text-body-sm text-ink-muted">{industry.summary}</p>
+      </div>
     </FeatureCard>
   );
 }

@@ -1,3 +1,4 @@
+import { industryCover } from "@/lib/media";
 import type { Industry } from "./types";
 
 export const industriesPage = {
@@ -14,6 +15,7 @@ export const industries: Industry[] = [
     summary:
       "Diagnostic imaging support, patient records automation, and secure clinic portals.",
     highlight: "Compliance-ready",
+    image: industryCover("healthcare", "Cover art for healthcare industry"),
     capabilities: [
       "Secure clinical portals",
       "Imaging and workflow support",
@@ -27,6 +29,7 @@ export const industries: Industry[] = [
     summary:
       "Camera inspection on assembly lines, machine monitoring, and sensor networks.",
     highlight: "Shop-floor edge",
+    image: industryCover("manufacturing", "Cover art for manufacturing industry"),
     capabilities: [
       "Visual inspection systems",
       "Machine monitoring",
@@ -40,6 +43,7 @@ export const industries: Industry[] = [
     summary:
       "Consignment tracking, warehouse device integration, and dispatch automation.",
     highlight: "Real-time telematics",
+    image: industryCover("logistics", "Cover art for logistics industry"),
     capabilities: [
       "Shipment and asset tracking",
       "Warehouse device integration",
@@ -53,6 +57,7 @@ export const industries: Industry[] = [
     summary:
       "Citizen service portals, digital workflow management, and sovereign data systems.",
     highlight: "Strict governance",
+    image: industryCover("public-sector", "Cover art for public sector industry"),
     capabilities: [
       "Citizen service portals",
       "Workflow routing and permissions",
@@ -66,6 +71,7 @@ export const industries: Industry[] = [
     summary:
       "Custom business tools, legacy system modernization, and secure internal APIs.",
     highlight: "High reliability",
+    image: industryCover("enterprise-it", "Cover art for enterprise IT industry"),
     capabilities: [
       "Internal business applications",
       "Legacy modernization",
@@ -79,6 +85,7 @@ export const industries: Industry[] = [
     summary:
       "Scalable web applications, consumer mobile apps, and multi-tenant architectures.",
     highlight: "High concurrency",
+    image: industryCover("digital-platforms", "Cover art for digital platforms industry"),
     capabilities: [
       "Multi-tenant SaaS platforms",
       "Consumer and B2B mobile apps",
@@ -92,6 +99,7 @@ export const industries: Industry[] = [
     summary:
       "Document extraction, confidential OCR engines, and structured search for complex records.",
     highlight: "Auditability",
+    image: industryCover("fintech-legal", "Cover art for professional and legal services industry"),
     capabilities: [
       "Document intelligence",
       "Structured extraction workflows",
@@ -105,6 +113,7 @@ export const industries: Industry[] = [
     summary:
       "Product strategy, UI/UX, and design systems that keep engineering and experience aligned.",
     highlight: "Product thinking",
+    image: industryCover("product-design", "Cover art for product and design industry"),
     capabilities: [
       "Product strategy",
       "System UX / UI design",

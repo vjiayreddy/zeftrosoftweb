@@ -1,6 +1,7 @@
 import {
   AdvantageGrid,
   CaseStudyCard,
+  ClientLogoMarquee,
   CtaBand,
   IndustryCard,
   PageHero,
@@ -13,6 +14,7 @@ import { LinkButton } from "@/components/ui";
 import {
   advantageItems,
   caseStudies,
+  clients,
   home,
   industries,
   pillars,
@@ -21,6 +23,7 @@ import {
   secondaryCta,
   site,
 } from "@/content";
+import { homeHeroImage } from "@/lib/media";
 import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -46,6 +49,12 @@ export default function Home() {
         description={home.hero.description}
         primaryCta={home.hero.primaryCta}
         secondaryCta={home.hero.secondaryCta}
+        image={homeHeroImage}
+      />
+
+      <ClientLogoMarquee
+        clients={clients}
+        eyebrow="Organisations we work with"
       />
 
       <Section

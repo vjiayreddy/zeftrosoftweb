@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 188 40" role="img" aria-label="Zeftrosoft">
+  <rect width="40" height="40" fill="#0f62fe"/>
+  <path d="M10 11h20v4.5L16.5 26.5H30V31H10v-4.5L23.5 15.5H10V11z" fill="#ffffff"/>
+  <text x="52" y="27" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="600" fill="#161616">Zeftrosoft</text>
+</svg>

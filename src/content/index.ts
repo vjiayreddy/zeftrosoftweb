@@ -1,5 +1,6 @@
 export * from "./types";
 export * from "./site";
+export * from "./clients";
 export * from "./home";
 export * from "./services";
 export * from "./industries";

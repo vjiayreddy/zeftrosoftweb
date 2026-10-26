@@ -1,3 +1,4 @@
+import { workCover } from "@/lib/media";
 import type { CaseStudy } from "./types";
 
 export const workPage = {
@@ -21,6 +22,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ["Python", "Tesseract/OCR", "FastAPI", "Redis"],
     outcome:
       "Reduced manual entry effort and improved consistency of structured records handed to business systems.",
+    image: workCover("document-processing-ocr", "Geometric cover for document processing OCR case study"),
     framing: "representative",
   },
   {
@@ -36,6 +38,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ["Go", "PostgreSQL", "React", "Docker"],
     outcome:
       "Clearer handoffs between departments and a durable record of application status and decisions.",
+    image: workCover("government-workflow-portal", "Geometric cover for government workflow portal case study"),
     framing: "representative",
   },
   {
@@ -51,6 +54,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ["C++", "Embedded Linux", "MQTT", "RTSP"],
     outcome:
       "Faster local defect alerts and a more reliable shop-floor feedback loop.",
+    image: workCover("device-camera-integration", "Geometric cover for device and camera integration case study"),
     framing: "representative",
   },
   {
@@ -66,6 +70,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ["Python", "OpenCV", "TensorRT", "MQTT"],
     outcome:
       "More consistent inspection coverage with operator-visible results on the floor.",
+    image: workCover("visual-inspection-line", "Geometric cover for visual inspection line case study"),
     framing: "representative",
   },
   {
@@ -81,6 +86,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ["Embedded C", "FreeRTOS", "AWS IoT", "TimescaleDB", "React"],
     outcome:
       "Better visibility into thermal exceptions and longer usable device life in transit.",
+    image: workCover("cold-chain-telemetry", "Geometric cover for cold-chain telemetry case study"),
     framing: "representative",
   },
   {
@@ -96,6 +102,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ["Rust", "Go", "PostgreSQL", "gRPC"],
     outcome:
       "Stronger control over feature access while supporting air-gapped and on-prem customer deployments.",
+    image: workCover("license-entitlement-gateway", "Geometric cover for license entitlement gateway case study"),
     framing: "representative",
   },
 ];

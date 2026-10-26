@@ -154,3 +154,18 @@
     color: var(--color-blue-60);
   }
 }
+
+@keyframes client-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[client-marquee_36s_linear_infinite\] {
+    animation: none !important;
+  }
+}
