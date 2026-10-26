@@ -1,8 +1,9 @@
 "use client";
 
+import { useStaggerIn } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 import type { CaseStudy } from "@/content";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { CaseStudyCard } from "./case-study-card";
 
 export type WorkFilterProps = {
@@ -12,6 +13,7 @@ export type WorkFilterProps = {
 
 export function WorkFilter({ studies, domains }: WorkFilterProps) {
   const [activeDomain, setActiveDomain] = useState("All");
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const filtered = useMemo(() => {
     if (activeDomain === "All") {
@@ -19,6 +21,8 @@ export function WorkFilter({ studies, domains }: WorkFilterProps) {
     }
     return studies.filter((study) => study.domain === activeDomain);
   }, [activeDomain, studies]);
+
+  useStaggerIn(gridRef, [activeDomain, filtered.length]);
 
   return (
     <div className="flex flex-col gap-xl">
@@ -50,9 +54,12 @@ export function WorkFilter({ studies, domains }: WorkFilterProps) {
       </div>
 
       {filtered.length > 0 ? (
-        <div className="grid grid-cols-1 gap-md md:grid-cols-2 lg:grid-cols-3">
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 gap-md md:grid-cols-2 lg:grid-cols-3"
+        >
           {filtered.map((study) => (
-            <CaseStudyCard key={study.slug} study={study} />
+            <CaseStudyCard key={`${activeDomain}-${study.slug}`} study={study} />
           ))}
         </div>
       ) : (

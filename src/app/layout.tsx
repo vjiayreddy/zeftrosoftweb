@@ -1,4 +1,5 @@
 import { Footer, Header } from "@/components/layout";
+import { PageTransition } from "@/components/motion";
 import { site } from "@/content";
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
@@ -42,8 +43,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${plexSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         <Header />
-        <div id="main-content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
-          {children}
+        <div
+          id="main-content"
+          tabIndex={-1}
+          className="flex flex-1 flex-col outline-none"
+        >
+          <PageTransition>{children}</PageTransition>
         </div>
         <Footer />
       </body>

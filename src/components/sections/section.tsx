@@ -1,5 +1,9 @@
+"use client";
+
+import { useScrollReveal } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 import type { HTMLAttributes, ReactNode } from "react";
+import { useRef } from "react";
 
 export type SectionTone = "canvas" | "surface";
 
@@ -27,16 +31,22 @@ export function Section({
   className,
   ...props
 }: SectionProps) {
+  const ref = useRef<HTMLElement>(null);
+  useScrollReveal(ref);
   const hasHeader = Boolean(eyebrow || title || description || action);
 
   return (
     <section
+      ref={ref}
       className={cn("w-full py-section", toneClassName[tone], className)}
       {...props}
     >
       <div className="mx-auto flex w-full max-w-[1584px] flex-col gap-xl px-md md:px-xl">
         {hasHeader ? (
-          <div className="flex flex-col gap-lg md:flex-row md:items-end md:justify-between">
+          <div
+            data-motion="header"
+            className="flex flex-col gap-lg md:flex-row md:items-end md:justify-between"
+          >
             <div className="flex max-w-3xl flex-col gap-sm">
               {eyebrow ? (
                 <p className="text-eyebrow text-ink-muted">{eyebrow}</p>
