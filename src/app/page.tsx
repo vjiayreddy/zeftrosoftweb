@@ -1,27 +1,134 @@
+import {
+  AdvantageGrid,
+  CaseStudyCard,
+  CtaBand,
+  IndustryCard,
+  PageHero,
+  PillarCard,
+  ProcessSteps,
+  ProductCard,
+  Section,
+} from "@/components/sections";
 import { LinkButton } from "@/components/ui";
-import { home } from "@/content";
+import {
+  advantageItems,
+  caseStudies,
+  home,
+  industries,
+  pillars,
+  processSteps,
+  products,
+  secondaryCta,
+} from "@/content";
+
+const featuredWork = caseStudies.slice(0, 3);
 
 export default function Home() {
-  const { hero } = home;
-
   return (
-    <main className="mx-auto flex w-full max-w-[1584px] flex-1 flex-col gap-lg px-md py-xxl md:px-xl">
-      <p className="text-eyebrow text-ink-muted">{hero.eyebrow}</p>
-      <h1 className="max-w-3xl text-display-md text-ink md:text-display-lg">
-        {hero.title}
-      </h1>
-      <p className="max-w-2xl text-body-lg text-ink-muted">{hero.description}</p>
-      <div className="flex flex-wrap gap-sm">
-        <LinkButton href={hero.primaryCta.href} variant="primary">
-          {hero.primaryCta.label}
-        </LinkButton>
-        <LinkButton href={hero.secondaryCta.href} variant="tertiary">
-          {hero.secondaryCta.label}
-        </LinkButton>
-      </div>
-      <p className="mt-xl text-body-sm text-ink-subtle">
-        Site foundation loaded — full home sections land in the next pass.
-      </p>
+    <main>
+      <PageHero
+        eyebrow={home.hero.eyebrow}
+        title={home.hero.title}
+        description={home.hero.description}
+        primaryCta={home.hero.primaryCta}
+        secondaryCta={home.hero.secondaryCta}
+      />
+
+      <Section
+        tone="surface"
+        eyebrow={home.practices.eyebrow}
+        title={home.practices.title}
+        description={home.practices.description}
+        action={
+          <LinkButton href="/services" variant="tertiary">
+            View all services
+          </LinkButton>
+        }
+      >
+        <div className="grid grid-cols-1 gap-md md:grid-cols-3">
+          {pillars.map((pillar) => (
+            <PillarCard key={pillar.id} pillar={pillar} />
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        tone="canvas"
+        eyebrow={home.process.eyebrow}
+        title={home.process.title}
+        description={home.process.description}
+      >
+        <ProcessSteps steps={processSteps} />
+      </Section>
+
+      <Section
+        tone="surface"
+        eyebrow={home.industries.eyebrow}
+        title={home.industries.title}
+        description={home.industries.description}
+        action={
+          <LinkButton href={home.industries.href} variant="tertiary">
+            Browse industries
+          </LinkButton>
+        }
+      >
+        <div className="grid grid-cols-1 gap-md sm:grid-cols-2 lg:grid-cols-4">
+          {industries.map((industry) => (
+            <IndustryCard key={industry.slug} industry={industry} />
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        tone="canvas"
+        eyebrow={home.products.eyebrow}
+        title={home.products.title}
+        description={home.products.description}
+        action={
+          <LinkButton href={home.products.href} variant="tertiary">
+            View products
+          </LinkButton>
+        }
+      >
+        <div className="grid grid-cols-1 gap-md md:grid-cols-2">
+          {products.map((product) => (
+            <ProductCard key={product.slug} product={product} />
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        tone="surface"
+        eyebrow={home.work.eyebrow}
+        title={home.work.title}
+        description={home.work.description}
+        action={
+          <LinkButton href={home.work.href} variant="tertiary">
+            See all work
+          </LinkButton>
+        }
+      >
+        <div className="grid grid-cols-1 gap-md md:grid-cols-3">
+          {featuredWork.map((study) => (
+            <CaseStudyCard key={study.slug} study={study} />
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        tone="canvas"
+        eyebrow={home.advantage.eyebrow}
+        title={home.advantage.title}
+      >
+        <AdvantageGrid items={advantageItems} />
+      </Section>
+
+      <CtaBand
+        title={home.cta.title}
+        description={home.cta.description}
+        primaryCta={home.cta.primaryCta}
+        secondaryCta={secondaryCta}
+      />
     </main>
   );
 }
