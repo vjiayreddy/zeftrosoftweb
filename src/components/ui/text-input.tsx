@@ -13,7 +13,7 @@ export function TextInput({
   return (
     <input
       className={cn(
-        "w-full rounded-none border-0 border-b border-hairline bg-surface-1",
+        "min-h-12 w-full min-w-0 rounded-none border-0 border-b border-hairline bg-surface-1",
         "px-md py-[11px] text-body text-ink",
         "placeholder:text-ink-subtle",
         "outline-none transition-[border-color,box-shadow]",

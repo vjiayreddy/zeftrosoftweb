@@ -7,3 +7,4 @@ export { PillarCard, type PillarCardProps } from "./pillar-card";
 export { ProcessSteps, type ProcessStepsProps } from "./process-steps";
 export { ProductCard, type ProductCardProps } from "./product-card";
 export { Section, type SectionProps, type SectionTone } from "./section";
+export { WorkFilter, type WorkFilterProps } from "./work-filter";
