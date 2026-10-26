@@ -19,7 +19,21 @@ import {
   processSteps,
   products,
   secondaryCta,
+  site,
 } from "@/content";
+import { pageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: site.tagline,
+    description: site.description,
+    path: "/",
+  }),
+  title: {
+    absolute: `${site.name} · ${site.tagline}`,
+  },
+};
 
 const featuredWork = caseStudies.slice(0, 3);
 

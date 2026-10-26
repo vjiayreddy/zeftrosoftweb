@@ -6,4 +6,5 @@ export * from "./industries";
 export * from "./products";
 export * from "./work";
 export * from "./about";
+export * from "./contact";
 export * from "./legal";

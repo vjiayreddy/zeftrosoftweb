@@ -13,21 +13,25 @@ export function Footer() {
         </div>
 
         {footerColumns.map((column) => (
-          <div key={column.title} className="flex flex-col gap-sm">
+          <nav
+            key={column.title}
+            aria-label={column.title}
+            className="flex flex-col gap-sm"
+          >
             <p className="text-body-emphasis text-ink">{column.title}</p>
             <ul className="flex list-none flex-col gap-xs p-0">
               {column.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-body-sm text-ink-muted no-underline hover:text-ink"
+                    className="text-body-sm text-ink-muted no-underline hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         ))}
       </div>
 
