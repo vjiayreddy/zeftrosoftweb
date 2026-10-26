@@ -1,6 +1,7 @@
 "use client";
 
 import { LinkButton } from "@/components/ui";
+import { gsap, ScrollTrigger, useGSAP } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 import { primaryCta, primaryNav, site } from "@/content";
 import Link from "next/link";
@@ -16,8 +17,13 @@ export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const menuId = useId();
+  const headerRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const line1Ref = useRef<HTMLSpanElement>(null);
+  const line2Ref = useRef<HTMLSpanElement>(null);
+  const line3Ref = useRef<HTMLSpanElement>(null);
+  const hasOpenedRef = useRef(false);
 
   useEffect(() => {
     setOpen(false);
@@ -47,7 +53,7 @@ export function Header() {
       if (event.key !== "Tab" || !panel) return;
 
       const focusable = panel.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled])',
+        "a[href], button:not([disabled])",
       );
       if (focusable.length === 0) return;
 
@@ -68,8 +74,96 @@ export function Header() {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
+  useGSAP(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    const trigger = ScrollTrigger.create({
+      start: 8,
+      onUpdate: (self) => {
+        header.classList.toggle("is-scrolled", self.scroll() > 8);
+      },
+    });
+
+    return () => {
+      trigger.kill();
+    };
+  }, []);
+
+  useGSAP(
+    () => {
+      const panel = panelRef.current;
+      const line1 = line1Ref.current;
+      const line2 = line2Ref.current;
+      const line3 = line3Ref.current;
+      if (!panel || !line1 || !line2 || !line3) return;
+
+      const reduce = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      const duration = reduce ? 0 : 0.25;
+      const links = panel.querySelectorAll("nav > a, nav > [data-motion='cta']");
+
+      if (open) {
+        hasOpenedRef.current = true;
+        gsap.set(panel, { display: "block" });
+        gsap
+          .timeline({ defaults: { ease: "power2.out", duration } })
+          .to(line1, { y: 6, rotation: 45 }, 0)
+          .to(line2, { autoAlpha: 0, duration: reduce ? 0 : 0.15 }, 0)
+          .to(line3, { y: -6, rotation: -45 }, 0)
+          .fromTo(
+            panel,
+            { autoAlpha: 0, y: -8 },
+            { autoAlpha: 1, y: 0, duration: reduce ? 0 : 0.3 },
+            0,
+          );
+
+        if (!reduce) {
+          gsap.fromTo(
+            links,
+            { autoAlpha: 0, y: 8 },
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.3,
+              stagger: 0.04,
+              delay: 0.05,
+              clearProps: "transform",
+            },
+          );
+        }
+        return;
+      }
+
+      if (!hasOpenedRef.current) {
+        gsap.set(panel, { display: "none", autoAlpha: 0 });
+        return;
+      }
+
+      gsap
+        .timeline({
+          defaults: { ease: "power2.inOut", duration },
+          onComplete: () => {
+            gsap.set(panel, { display: "none" });
+          },
+        })
+        .to(line1, { y: 0, rotation: 0 }, 0)
+        .to(line2, { autoAlpha: 1, duration: reduce ? 0 : 0.15 }, 0)
+        .to(line3, { y: 0, rotation: 0 }, 0)
+        .to(panel, { autoAlpha: 0, y: -8, duration: reduce ? 0 : 0.2 }, 0);
+    },
+    { dependencies: [open] },
+  );
+
   return (
-    <header className="sticky top-0 z-50 border-b border-hairline bg-canvas">
+    <header
+      ref={headerRef}
+      className={cn(
+        "sticky top-0 z-50 border-b border-hairline bg-canvas transition-[box-shadow] duration-200",
+        "[&.is-scrolled]:shadow-[inset_0_-1px_0_0_#e5e5e5]",
+      )}
+    >
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-md focus:top-md focus:z-[60] focus:bg-primary focus:px-md focus:py-sm focus:text-button focus:text-on-primary focus:outline-none"
@@ -125,22 +219,13 @@ export function Header() {
         >
           <span aria-hidden className="flex flex-col gap-1">
             <span
-              className={cn(
-                "block h-0.5 w-5 bg-ink transition-transform",
-                open && "translate-y-1.5 rotate-45",
-              )}
+              ref={line1Ref}
+              className="block h-0.5 w-5 origin-center bg-ink"
             />
+            <span ref={line2Ref} className="block h-0.5 w-5 bg-ink" />
             <span
-              className={cn(
-                "block h-0.5 w-5 bg-ink transition-opacity",
-                open && "opacity-0",
-              )}
-            />
-            <span
-              className={cn(
-                "block h-0.5 w-5 bg-ink transition-transform",
-                open && "-translate-y-1.5 -rotate-45",
-              )}
+              ref={line3Ref}
+              className="block h-0.5 w-5 origin-center bg-ink"
             />
           </span>
         </button>
@@ -149,11 +234,9 @@ export function Header() {
       <div
         ref={panelRef}
         id={menuId}
-        hidden={!open}
-        className={cn(
-          "border-t border-hairline bg-canvas lg:hidden",
-          open ? "block" : "hidden",
-        )}
+        aria-hidden={!open}
+        className="border-t border-hairline bg-canvas lg:hidden"
+        style={{ display: "none" }}
       >
         <nav
           aria-label="Mobile primary"
@@ -163,6 +246,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
+              tabIndex={open ? undefined : -1}
               aria-current={
                 isActivePath(pathname, item.href) ? "page" : undefined
               }
@@ -176,7 +260,13 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <LinkButton href={primaryCta.href} variant="primary" className="mt-sm">
+          <LinkButton
+            href={primaryCta.href}
+            variant="primary"
+            data-motion="cta"
+            tabIndex={open ? undefined : -1}
+            className="mt-sm"
+          >
             {primaryCta.label}
           </LinkButton>
         </nav>
