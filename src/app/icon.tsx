@@ -10,14 +10,15 @@ export default function Icon() {
         style={{
           width: "100%",
           height: "100%",
-          background: "#0f62fe",
-          color: "#ffffff",
+          background: "#030712",
+          color: "#98FF03",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           fontSize: 18,
           fontWeight: 700,
           fontFamily: "Helvetica Neue, Arial, sans-serif",
+          borderRadius: 8,
         }}
       >
         Z

@@ -2,6 +2,7 @@ export * from "./types";
 export * from "./site";
 export * from "./clients";
 export * from "./home";
+export * from "./faq";
 export * from "./services";
 export * from "./industries";
 export * from "./products";

@@ -8,15 +8,15 @@ export const contactPage = {
   responseNote: contact.responseNote,
   email: contact.email,
   fields: {
-    name: { label: "Name", placeholder: "Your name" },
-    email: { label: "Email", placeholder: "you@company.com" },
-    company: { label: "Company", placeholder: "Organization name" },
+    name: { label: "/Your name", placeholder: "Enter your full name" },
+    email: { label: "/Your e-mail", placeholder: "Enter your e-mail" },
+    company: { label: "/Company", placeholder: "Organization name" },
     message: {
-      label: "Message",
-      placeholder: "What are you looking to build or improve?",
+      label: "/More about the project",
+      placeholder: "Leave us a message",
     },
   },
-  submitLabel: "Send message",
+  submitLabel: "Submit message",
   mailtoSubject: "Project enquiry from zeftrosoft.com",
   // TODO: Replace mailto submit with Formspree (or similar) endpoint when available.
   submitMode: "mailto" as const,

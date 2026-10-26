@@ -15,6 +15,8 @@ export type PageHeroProps = HTMLAttributes<HTMLElement> & {
   primaryCta: CtaLink;
   secondaryCta?: CtaLink;
   image?: MediaImageType;
+  /** Large uppercase campaign-style hero (home) */
+  campaign?: boolean;
 };
 
 export function PageHero({
@@ -24,6 +26,7 @@ export function PageHero({
   primaryCta,
   secondaryCta,
   image,
+  campaign = false,
   className,
   ...props
 }: PageHeroProps) {
@@ -34,36 +37,56 @@ export function PageHero({
     <section
       ref={ref}
       className={cn(
-        "relative w-full overflow-hidden bg-canvas py-section",
-        image &&
-          "bg-[linear-gradient(135deg,rgba(15,98,254,0.08)_0%,rgba(255,255,255,0)_45%,rgba(0,67,206,0.05)_100%)]",
+        "relative w-full overflow-hidden bg-grid py-section",
         className,
       )}
       {...props}
     >
+      <span aria-hidden className="pixel-corner pixel-corner-tl opacity-80" />
+      <span aria-hidden className="pixel-corner pixel-corner-br opacity-80" />
+
       <div
         className={cn(
-          "mx-auto flex w-full max-w-[1584px] flex-col gap-xl px-md md:px-xl",
-          image && "lg:grid lg:grid-cols-2 lg:items-center lg:gap-xxl",
+          "relative z-10 mx-auto flex w-full max-w-[1584px] flex-col gap-xl px-md md:px-xl",
+          image && !campaign && "lg:grid lg:grid-cols-2 lg:items-center lg:gap-xxl",
+          campaign && "items-center text-center",
         )}
       >
-        <div className="flex flex-col gap-lg">
-          <p data-motion="eyebrow" className="text-eyebrow text-ink-muted">
+        <div
+          className={cn(
+            "flex flex-col gap-lg",
+            campaign && "mx-auto max-w-4xl items-center",
+          )}
+        >
+          <p data-motion="eyebrow" className="eyebrow-marker">
             {eyebrow}
           </p>
           <h1
             data-motion="title"
-            className="max-w-4xl text-display-md text-ink md:text-display-lg lg:text-display-xl"
+            className={cn(
+              "font-display text-ink",
+              campaign
+                ? "max-w-5xl text-display-md uppercase md:text-display-lg lg:text-display-xl"
+                : "max-w-4xl text-display-md md:text-display-lg lg:text-display-xl",
+            )}
           >
             {title}
           </h1>
           <p
             data-motion="body"
-            className="max-w-2xl text-body-lg text-ink-muted"
+            className={cn(
+              "max-w-2xl text-body-lg text-ink-muted",
+              campaign && "mx-auto",
+            )}
           >
             {description}
           </p>
-          <div className="flex flex-wrap gap-sm pt-sm">
+          <div
+            className={cn(
+              "flex flex-wrap gap-sm pt-sm",
+              campaign && "justify-center",
+            )}
+          >
             <LinkButton
               href={primaryCta.href}
               variant="primary"
@@ -74,7 +97,8 @@ export function PageHero({
             {secondaryCta ? (
               <LinkButton
                 href={secondaryCta.href}
-                variant="tertiary"
+                variant="secondary"
+                accent={false}
                 data-motion="cta"
               >
                 {secondaryCta.label}
@@ -83,10 +107,10 @@ export function PageHero({
           </div>
         </div>
 
-        {image ? (
+        {image && !campaign ? (
           <div
             data-motion="media"
-            className="order-first border border-hairline bg-surface-1 lg:order-none"
+            className="order-first overflow-hidden rounded-xl border border-hairline bg-canvas shadow-card lg:order-none"
           >
             <MediaImage
               image={image}

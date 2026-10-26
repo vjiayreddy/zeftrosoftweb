@@ -106,7 +106,7 @@ export function ContactForm() {
       <div className="flex flex-col gap-xs">
         <label
           htmlFor={`${formId}-name`}
-          className="text-body-emphasis text-ink"
+          className="text-caption uppercase tracking-wide text-ink-muted"
         >
           {fields.name.label}
         </label>
@@ -136,7 +136,7 @@ export function ContactForm() {
       <div className="flex flex-col gap-xs">
         <label
           htmlFor={`${formId}-email`}
-          className="text-body-emphasis text-ink"
+          className="text-caption uppercase tracking-wide text-ink-muted"
         >
           {fields.email.label}
         </label>
@@ -167,10 +167,12 @@ export function ContactForm() {
       <div className="flex flex-col gap-xs">
         <label
           htmlFor={`${formId}-company`}
-          className="text-body-emphasis text-ink"
+          className="text-caption uppercase tracking-wide text-ink-muted"
         >
           {fields.company.label}
-          <span className="ml-xs font-normal text-ink-subtle">(optional)</span>
+          <span className="ml-xs normal-case tracking-normal text-ink-subtle">
+            (optional)
+          </span>
         </label>
         <TextInput
           id={`${formId}-company`}
@@ -185,7 +187,7 @@ export function ContactForm() {
       <div className="flex flex-col gap-xs">
         <label
           htmlFor={`${formId}-message`}
-          className="text-body-emphasis text-ink"
+          className="text-caption uppercase tracking-wide text-ink-muted"
         >
           {fields.message.label}
         </label>

@@ -25,7 +25,7 @@ export function FeatureCard({
       ref={ref as Ref<HTMLElement>}
       data-motion="item"
       className={cn(
-        "rounded-none border border-hairline p-lg text-body text-ink will-change-transform",
+        "rounded-lg border border-hairline p-lg text-body text-ink will-change-transform",
         elevated ? "bg-surface-1" : "bg-canvas",
         className,
       )}

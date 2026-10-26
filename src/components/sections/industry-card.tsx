@@ -24,11 +24,11 @@ export function IndustryCard({ industry }: IndustryCardProps) {
         </Link>
       ) : null}
       <div className="flex flex-1 flex-col gap-sm p-lg">
-        <p className="text-caption text-primary">{industry.highlight}</p>
-        <h3 className="text-subhead text-ink">
+        <p className="eyebrow-marker text-caption">{industry.highlight}</p>
+        <h3 className="font-display text-subhead text-ink">
           <Link
             href={`/industries/${industry.slug}`}
-            className="text-ink no-underline hover:text-primary"
+            className="text-ink no-underline hover:underline"
           >
             {industry.title}
           </Link>

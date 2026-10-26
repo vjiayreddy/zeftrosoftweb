@@ -77,3 +77,19 @@ export type AdvantageItem = {
   title: string;
   description: string;
 };
+
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export type StatItem = {
+  value: string;
+  label: string;
+};
+
+export type ComparisonSide = {
+  title: string;
+  items: string[];
+  emphasized?: boolean;
+};

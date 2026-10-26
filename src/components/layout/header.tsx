@@ -3,7 +3,7 @@
 import { LinkButton } from "@/components/ui";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/motion";
 import { cn } from "@/lib/cn";
-import { primaryCta, primaryNav, site } from "@/content";
+import { availabilityBanner, primaryCta, primaryNav, site } from "@/content";
 import { brand } from "@/lib/media";
 import Image from "next/image";
 import Link from "next/link";
@@ -163,20 +163,28 @@ export function Header() {
       ref={headerRef}
       className={cn(
         "sticky top-0 z-50 border-b border-hairline bg-canvas transition-[box-shadow] duration-200",
-        "[&.is-scrolled]:shadow-[inset_0_-1px_0_0_#e5e5e5]",
+        "[&.is-scrolled]:shadow-[0_8px_24px_rgba(3,7,18,0.06)]",
       )}
     >
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-md focus:top-md focus:z-[60] focus:bg-primary focus:px-md focus:py-sm focus:text-button focus:text-on-primary focus:outline-none"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-md focus:top-md focus:z-[60] focus:rounded-md focus:bg-ink focus:px-md focus:py-sm focus:text-button focus:text-inverse-ink focus:outline-none"
       >
         Skip to main content
       </a>
 
+      <div className="flex items-center justify-center gap-sm bg-inverse-canvas px-md py-xs text-center">
+        <span aria-hidden className="hidden h-2 w-2 bg-primary sm:block" />
+        <p className="text-caption uppercase tracking-wide text-primary">
+          {availabilityBanner}
+        </p>
+        <span aria-hidden className="hidden h-2 w-2 bg-primary sm:block" />
+      </div>
+
       <div className="mx-auto flex h-16 w-full max-w-[1584px] items-center justify-between gap-md px-md lg:px-xl">
         <Link
           href="/"
-          className="inline-flex shrink-0 items-center no-underline hover:opacity-90"
+          className="inline-flex shrink-0 items-center rounded-sm border border-hairline px-sm py-xs no-underline hover:opacity-90"
           aria-label={site.name}
         >
           <Image
@@ -184,7 +192,7 @@ export function Header() {
             alt=""
             width={150}
             height={32}
-            className="h-8 w-auto"
+            className="h-7 w-auto"
             priority
           />
         </Link>
@@ -201,7 +209,7 @@ export function Header() {
                 isActivePath(pathname, item.href) ? "page" : undefined
               }
               className={cn(
-                "whitespace-nowrap text-body-sm no-underline transition-colors",
+                "whitespace-nowrap text-caption uppercase tracking-wide no-underline transition-colors",
                 isActivePath(pathname, item.href)
                   ? "border-b-2 border-ink pb-xxs text-ink"
                   : "text-ink-muted hover:text-ink",

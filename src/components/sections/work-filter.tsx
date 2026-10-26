@@ -41,9 +41,9 @@ export function WorkFilter({ studies, domains }: WorkFilterProps) {
               aria-selected={isActive}
               onClick={() => setActiveDomain(domain)}
               className={cn(
-                "min-h-10 border px-md py-sm text-body-emphasis transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
+                "min-h-10 rounded-md border px-md py-sm text-body-emphasis transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink",
                 isActive
-                  ? "border-ink bg-ink text-inverse-ink"
+                  ? "border-ink bg-ink text-inverse-ink shadow-cta"
                   : "border-hairline bg-canvas text-ink hover:border-ink",
               )}
             >

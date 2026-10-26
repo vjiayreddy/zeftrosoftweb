@@ -27,12 +27,13 @@ export default function ServicesPage() {
       />
 
       <Section
-        tone="surface"
+        tone="page"
+        align="center"
         eyebrow="Three foundational disciplines"
         title="Software, intelligence, and connected systems — under one roof."
         description="Each practice stands alone when you need depth. Together they reduce handoffs between vendors and keep product, data, and devices aligned."
       >
-        <div className="grid grid-cols-1 gap-md md:grid-cols-3">
+        <div className="overflow-hidden rounded-xl border border-hairline bg-canvas md:grid md:grid-cols-3 md:divide-x md:divide-hairline">
           {pillars.map((pillar) => (
             <PillarCard key={pillar.id} pillar={pillar} />
           ))}

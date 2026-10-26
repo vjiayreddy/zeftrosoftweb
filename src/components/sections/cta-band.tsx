@@ -81,18 +81,26 @@ export function CtaBand({
   return (
     <section
       ref={ref}
-      className={cn("w-full bg-primary py-section text-on-primary", className)}
+      className={cn(
+        "relative w-full overflow-hidden bg-grid-dark py-section text-inverse-ink",
+        className,
+      )}
       {...props}
     >
-      <div className="mx-auto flex w-full max-w-[1584px] flex-col gap-lg px-md md:flex-row md:items-end md:justify-between md:px-xl">
-        <div
-          data-motion="header"
-          className="flex max-w-3xl flex-col gap-sm"
-        >
-          <h2 className="text-headline text-on-primary md:text-display-md">
+      <span
+        aria-hidden
+        className="pointer-events-none absolute right-0 top-1/2 hidden h-40 w-40 -translate-y-1/2 bg-primary md:block"
+        style={{
+          clipPath:
+            "polygon(0 20%, 40% 20%, 40% 0, 70% 0, 70% 35%, 100% 35%, 100% 100%, 0 100%)",
+        }}
+      />
+      <div className="relative z-10 mx-auto flex w-full max-w-[1584px] flex-col gap-lg px-md md:flex-row md:items-end md:justify-between md:px-xl">
+        <div data-motion="header" className="flex max-w-3xl flex-col gap-sm">
+          <h2 className="font-display text-headline uppercase text-inverse-ink md:text-display-md">
             {title}
           </h2>
-          <p className="max-w-2xl text-body-lg text-on-primary/90">
+          <p className="max-w-2xl text-body-lg text-inverse-ink-muted">
             {description}
           </p>
         </div>
@@ -100,8 +108,9 @@ export function CtaBand({
           <LinkButton
             href={primaryCta.href}
             variant="secondary"
+            accent={false}
             data-motion="cta"
-            className="bg-on-primary text-ink hover:bg-canvas"
+            className="border-0 bg-canvas text-ink hover:bg-surface-1"
           >
             {primaryCta.label}
           </LinkButton>
@@ -109,8 +118,9 @@ export function CtaBand({
             <LinkButton
               href={secondaryCta.href}
               variant="ghost"
+              accent={false}
               data-motion="cta"
-              className="border border-on-primary text-on-primary hover:bg-blue-60 hover:text-on-primary"
+              className="border border-inverse-ink/30 text-inverse-ink hover:bg-inverse-surface-1 hover:text-inverse-ink"
             >
               {secondaryCta.label}
             </LinkButton>

@@ -13,11 +13,11 @@ export function TextInput({
   return (
     <input
       className={cn(
-        "min-h-12 w-full min-w-0 rounded-none border-0 border-b border-hairline bg-surface-1",
-        "px-md py-[11px] text-body text-ink",
+        "min-h-12 w-full min-w-0 rounded-none border-0 border-b border-hairline bg-transparent",
+        "px-0 py-sm text-body text-ink",
         "placeholder:text-ink-subtle",
-        "outline-none transition-[border-color,box-shadow]",
-        "focus:border-b-2 focus:border-primary focus:pb-[10px]",
+        "outline-none transition-[border-color]",
+        "focus:border-b-2 focus:border-ink focus:pb-[10px]",
         error && "border-b-2 border-semantic-error pb-[10px]",
         className,
       )}

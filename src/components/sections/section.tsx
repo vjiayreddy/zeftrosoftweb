@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 import type { HTMLAttributes, ReactNode } from "react";
 import { useRef } from "react";
 
-export type SectionTone = "canvas" | "surface";
+export type SectionTone = "canvas" | "surface" | "page";
 
 export type SectionProps = HTMLAttributes<HTMLElement> & {
   tone?: SectionTone;
@@ -14,11 +14,13 @@ export type SectionProps = HTMLAttributes<HTMLElement> & {
   description?: string;
   action?: ReactNode;
   children?: ReactNode;
+  align?: "start" | "center";
 };
 
 const toneClassName: Record<SectionTone, string> = {
   canvas: "bg-canvas",
   surface: "bg-surface-1",
+  page: "bg-page",
 };
 
 export function Section({
@@ -28,6 +30,7 @@ export function Section({
   description,
   action,
   children,
+  align = "start",
   className,
   ...props
 }: SectionProps) {
@@ -45,14 +48,22 @@ export function Section({
         {hasHeader ? (
           <div
             data-motion="header"
-            className="flex flex-col gap-lg md:flex-row md:items-end md:justify-between"
+            className={cn(
+              "flex flex-col gap-lg",
+              align === "center"
+                ? "items-center text-center"
+                : "md:flex-row md:items-end md:justify-between",
+            )}
           >
-            <div className="flex max-w-3xl flex-col gap-sm">
-              {eyebrow ? (
-                <p className="text-eyebrow text-ink-muted">{eyebrow}</p>
-              ) : null}
+            <div
+              className={cn(
+                "flex max-w-3xl flex-col gap-sm",
+                align === "center" && "items-center",
+              )}
+            >
+              {eyebrow ? <p className="eyebrow-marker">{eyebrow}</p> : null}
               {title ? (
-                <h2 className="text-headline text-ink md:text-display-md">
+                <h2 className="font-display text-headline text-ink md:text-display-md">
                   {title}
                 </h2>
               ) : null}

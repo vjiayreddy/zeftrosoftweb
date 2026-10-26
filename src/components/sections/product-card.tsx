@@ -25,10 +25,10 @@ export function ProductCard({ product }: ProductCardProps) {
       ) : null}
       <div className="flex flex-1 flex-col gap-md p-xl">
         <p className="text-caption text-ink-subtle">{product.category}</p>
-        <h3 className="text-card-title text-ink">
+        <h3 className="font-display text-card-title text-ink">
           <Link
             href={product.href}
-            className="text-ink no-underline hover:text-primary"
+            className="text-ink no-underline hover:underline"
           >
             {product.title}
           </Link>
@@ -38,7 +38,7 @@ export function ProductCard({ product }: ProductCardProps) {
           {product.deployment.map((mode) => (
             <span
               key={mode}
-              className="border border-hairline bg-surface-1 px-sm py-xxs text-caption text-ink-muted"
+              className="rounded-full border border-hairline bg-surface-1 px-sm py-xxs text-caption text-ink-muted"
             >
               {mode}
             </span>
@@ -46,7 +46,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
         <Link
           href={product.href}
-          className="text-body-emphasis text-primary no-underline hover:underline"
+          className="text-body-emphasis text-ink no-underline hover:underline"
         >
           View product
         </Link>

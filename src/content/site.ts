@@ -19,14 +19,17 @@ export const primaryNav: NavLink[] = [
 ];
 
 export const primaryCta: CtaLink = {
-  label: "Discuss a Project",
+  label: "Start a Project",
   href: "/contact",
 };
 
 export const secondaryCta: CtaLink = {
-  label: "Explore Our Services",
+  label: "Explore Services",
   href: "/services",
 };
+
+export const availabilityBanner =
+  "We are available for new engineering engagements";
 
 export const contact = {
   email: "hello@zeftrosoft.com",

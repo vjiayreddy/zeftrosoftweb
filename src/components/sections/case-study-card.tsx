@@ -27,15 +27,15 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
         <div className="flex flex-wrap items-center gap-sm">
           <p className="text-caption text-ink-subtle">{study.domain}</p>
           {study.framing === "representative" ? (
-            <span className="border border-hairline px-sm py-xxs text-caption text-ink-muted">
+            <span className="rounded-full border border-hairline px-sm py-xxs text-caption text-ink-muted">
               Representative engagement
             </span>
           ) : null}
         </div>
-        <h3 className="text-card-title text-ink">
+        <h3 className="font-display text-card-title text-ink">
           <Link
             href={`/work/${study.slug}`}
-            className="text-ink no-underline hover:text-primary"
+            className="text-ink no-underline hover:underline"
           >
             {study.title}
           </Link>
@@ -43,7 +43,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
         <p className="flex-1 text-body-sm text-ink-muted">{study.summary}</p>
         <Link
           href={`/work/${study.slug}`}
-          className="text-body-emphasis text-primary no-underline hover:underline"
+          className="text-body-emphasis text-ink no-underline hover:underline"
         >
           Read case summary
         </Link>
