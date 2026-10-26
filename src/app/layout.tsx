@@ -1,3 +1,5 @@
+import { Footer, Header } from "@/components/layout";
+import { site } from "@/content";
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
@@ -9,14 +11,30 @@ const plexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Zeftrosoft",
-  description: "Enterprise software built on a Carbon-inspired design system",
+  metadataBase: new URL(site.url),
+  title: {
+    default: site.name,
+    template: `%s · ${site.name}`,
+  },
+  description: site.description,
+  openGraph: {
+    title: site.name,
+    description: site.description,
+    siteName: site.name,
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${plexSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="flex min-h-full flex-col font-sans">
+        <Header />
+        <div id="main-content" className="flex flex-1 flex-col">
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }
